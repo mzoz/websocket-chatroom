@@ -21,7 +21,7 @@ public class ChatroomApplication {
      */
     @GetMapping("/")
     public ModelAndView login() {
-        return new ModelAndView("/login");
+        return new ModelAndView("login");
     }
 
     /**
@@ -30,7 +30,7 @@ public class ChatroomApplication {
     @PostMapping("/")
     public ModelAndView index(@RequestParam("username") String username,
                               HttpServletRequest request) throws UnknownHostException {
-        ModelAndView mav = new ModelAndView("/chat");
+        ModelAndView mav = new ModelAndView("chat");
         mav.addObject("username", username);
         return mav;
     }
